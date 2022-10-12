@@ -6,14 +6,21 @@
 header,
 .project:not(:last-child) {
     border-bottom: 1px solid #ccc;
+    background-color: #04AA6D;
 }
-
+h1{
+    text-align: center;
+}
+.navBar{
+    text-align: right;
+    padding-right: 10px;
+}
 .no-button {
     background: none;
     border: none;
     padding: 0;
     cursor: pointer;
-    color: #1b89bc;
+    color: darkblue;
     text-decoration: none;
     font-size: 100%;
 }
@@ -33,7 +40,7 @@ header,
     background-color: #04AA6D;
   border: none;
   color: white;
-  padding: 16px 32px;
+  padding: 10px 20px;
   text-decoration: none;
   margin: 4px 2px;
   cursor: pointer;
@@ -53,4 +60,15 @@ header,
 h2 {
     text-decoration: underline;
 }
+.main{
+    text-align: center;
+}
 
+.name{
+    background-color: bisque;
+}
+.postDiv {
+    padding: 8%;
+    border: 2px solid;
+    background-color: bisque;
+}

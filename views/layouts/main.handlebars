@@ -10,11 +10,11 @@
 </head>
 
 <body>
-  <div>
+  <div class="main">
     <header>
       <h1>Tech Blog</h1>
-      <nav>
-        <!-- Conditionally render login or logout links -->
+      <nav class="navBar">
+    
         {{#if logged_in}}
         <a href="/profile">profile</a> |
         <button class="no-button" id="logout">logout</button>
@@ -23,16 +23,11 @@
         {{/if}}
       </nav>
     </header>
-    <main class="container container-fluid mt-5">
-      <!-- Render the sub layout -->
+    <main>
       {{{ body }}}
     </main>
-    <footer>
-      
-    </footer>
   </div>
 
-  <!-- Render script for logged in users only -->
   {{#if logged_in}}
   <script src="/js/logout.js"></script>
   {{/if}}
