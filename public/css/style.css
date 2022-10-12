@@ -48,7 +48,9 @@ header,
 .break {
     padding: 10%;
     background-color: bisque;
+    border-bottom: 1px solid;
 }
-.navbar {
-    float:inline-end;
+h2 {
+    text-decoration: underline;
 }
+
