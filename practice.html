@@ -1,41 +1,44 @@
-<!DOCTYPE html>
-<html lang="en">
+<div>
+  <div>
+      <h2>Welcome, {{name}}!</h2>
+  </div>
+</div>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tech Blog</title>
-  <link rel="stylesheet" href="./public/css/jass.css">
-  <link rel="stylesheet" href="./public/css/style.css">
-</head>
-
-<body>
-  <div class=" text-align-center">
-    <header class="display-flex align-center p-2">
-      <h1>Tech Blog</h1>
-      <nav>
-        <!-- Conditionally render login or logout links -->
-        {{#if logged_in}}
-        <a href="/profile">profile</a> |
-        <button class="no-button" id="logout">logout</button>
-        {{else}}
-        <a href="/login">login</a>
-        {{/if}}
-      </nav>
-    </header>
-    <main class="container container-fluid mt-5">
-      <!-- Render the sub layout -->
-      {{{ body }}}
-    </main>
-    <footer>
-      
-    </footer>
+<div>
+  <div>
+      <h3>Post something new</h3>
+      <form>
+          <div>
+              <label for="project-name"></label>
+              <input class="form-input" type="text" id="project-name" name="project-name" placeholder="title" />
+          </div>
+          <div>
+              <label for="project-desc"></label>
+              <textarea class="form-input" id="project-desc" name="project-desc" placeholder="What's on your mind"
+                  style="width: 600px; height: 400px;"></textarea>
+          </div>
+          <div>
+              <button type="submit" class="btn btn-primary">Post</button>
+          </div>
+      </form>
   </div>
 
-  <!-- Render script for logged in users only -->
-  {{#if logged_in}}
-  <script src="/js/logout.js"></script>
-  {{/if}}
-</body>
+  {{#if posts.length}}
+  <div class="col-md-6 post-list">
+      <h3>Posts:</h3>
 
-</html>
+      {{#each posts as |post|}}
+      <div>
+          <div>
+              <h4><a href="/post/{{post.id}}">{{post.name}}</a></h4>
+          </div>
+          <div>
+              <button class="btn btn-sm btn-danger" data-id="{{post.id}}">DELETE</button>
+          </div>
+      </div>
+      {{/each}}
+  </div>
+  {{/if}}
+</div>
+
+<script src="./js/profile.js"></script>
