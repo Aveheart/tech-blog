@@ -1,3 +1,4 @@
+{{!-- main webpage with posts, login, dashboard, homepage option --}}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,15 +12,19 @@
 
 <body>
   <div class="main">
-    <header>
+    <header class="header">
       <h1>Tech Blog</h1>
       <nav class="navBar">
     
         {{#if logged_in}}
-        <a href="/profile">profile</a> |
-        <button class="no-button" id="logout">logout</button>
+        <a href="/profile">Dashboard</a> |
+        <a href="/">Home</a> |
+        <button class="no-button" id="logout">Logout</button>
+        
         {{else}}
-        <a href="/login">login</a>
+         <a href="/">Home</a>
+         <a href="/login">Dashboard</a>
+        <a href="/login">Login</a>
         {{/if}}
       </nav>
     </header>

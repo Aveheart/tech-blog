@@ -1,17 +1,14 @@
 [
     {
       "name": "Javascript and why I love it",
-      "description": "lorem ",
-      "user_id": 1
+      "description": "lorem "
     },
     {
       "name": "How does one use bootstrap?",
-      "description": "lorem ",
-      "user_id": 2
+      "description": "lorem "
     },
     {
       "name": "Trying to learn express",
-      "description": "lorem ",
-      "user_id": 3
+      "description": "lorem "
     }
   ]
