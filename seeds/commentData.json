@@ -1,14 +1,16 @@
 [
     {
-      "content": "Javascript and why I love it"
+      "content": "me too!",
+      "post_id": 1
    
     },
     {
-      "content": "How does one use bootstrap?"
+      "content": "i love bootstrap!",
+      "post_id": 2
       
     },
     {
-      "content": "Trying to learn express"
-      
+      "content": "Express was so hard for me",
+      "post_id": 3
     }
   ]
