@@ -4,8 +4,11 @@
   <p>{{description}}</p>
   <p>Created by {{user.name}} on {{format_date date_created}}</p>
 </div>
+
 {{#if logged_in}}
-{{!-- add a comment submit form --}}
+
+{{!--  comment submit form --}}
+
 <div class="addComment">
   <form class="newCommentForm">
     <div class="form-group">
@@ -17,10 +20,12 @@
     </div>
   </form>
 </div>
+
 {{#if comments.length}}
 <div class="AllComments">
   <h3>Comments</h3>
 </div>
+
 {{#each comments as |comment|}}
 <div class="Onecomment">
   <p>{{user.name}}
