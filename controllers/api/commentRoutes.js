@@ -6,7 +6,7 @@ const withAuth = require('../../utils/auth');
 router.post('/', withAuth, async (req, res) => {
   try {
     const newComment = await Comment.create({
-        ...req.body,
+      ...req.body,
     });
 
     res.status(200).json(newComment);
@@ -15,5 +15,28 @@ router.post('/', withAuth, async (req, res) => {
   }
 });
 
+// This route should add the new comments from users to page
+
+router.put('/', withAuth, async (req, res) => {
+  try {
+    const newContent = await Comment.update(req.body, {
+      where: {
+        id: req.params.id,
+        user_id: req.session.user_id,
+      }
+    }, {
+      new: true
+    });
+
+    if (!newContent) {
+      res.status(404).json({ message: 'No comment found with this id!' });
+      return;
+    }
+
+    res.status(200).json(newContent);
+  } catch (err) {
+    res.status(400).json(err);
+  }
+});
 
 module.exports = router;
