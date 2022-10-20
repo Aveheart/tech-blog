@@ -1,9 +1,9 @@
 // const userComment = document.querySelector('.addComment');
 
-const newFormHandler = async (event) => {
+const newComment = async (event) => {
     event.preventDefault();
   
-    const userComment = document.querySelector('.addComment').value.trim();
+    const commentContent = document.querySelector('.commentInpt').value.trim();
   
     if (content) {
       const response = await fetch(`/api/comments`, {
@@ -22,26 +22,8 @@ const newFormHandler = async (event) => {
     }
   };
   
-//   const delButtonHandler = async (event) => {
-//     if (event.target.hasAttribute('data-id')) {
-//       const id = event.target.getAttribute('data-id');
+  document
+    .querySelector('.comment-btn')
+    .addEventListener('submit', newComment);
   
-//       const response = await fetch(`/api/posts/${id}`, {
-//         method: 'DELETE',
-//       });
   
-//       if (response.ok) {
-//         document.location.replace('/profile');
-//       } else {
-//         alert('Failed to delete post');
-//       }
-//     }
-//   };
-  
-//   document
-//     .querySelector('.new-post-form')
-//     .addEventListener('submit', newFormHandler);
-  
-//   document
-//     .querySelector('.post-list')
-//     .addEventListener('click', delButtonHandler);
