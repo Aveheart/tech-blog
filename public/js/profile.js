@@ -20,7 +20,7 @@ const newFormHandler = async (event) => {
       }
     }
   };
-  
+  // Todo: match attribute to profile handlebars so it works
   const delButtonHandler = async (event) => {
     if (event.target.hasAttribute('data-id')) {
       const id = event.target.getAttribute('data-id');
