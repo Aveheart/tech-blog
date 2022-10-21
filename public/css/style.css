@@ -50,6 +50,17 @@ h1{
   cursor: pointer;
 
 }
+.post-btn {
+    background-color: #04AA6D;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+
+}
+
 .login-form {
     padding-left: 20px;
 }
