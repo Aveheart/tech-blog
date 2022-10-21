@@ -1,5 +1,4 @@
-console.log(document.location
-  )
+console.log(document.location)
 const newPost = async (event) => {
     event.preventDefault();
   
@@ -42,11 +41,17 @@ const newPost = async (event) => {
 
   // update a post
   const updatePost = async (event) => {
-    if (event.target.hasAttribute('data-id')) {
-      const id = event.target.getAttribute('data-id');
+    if (event.target.hasAttribute('editDataId')) {
+      const id = event.target.getAttribute('editDataId');
+      const name = event.target.getAttribute(`#editPostName${id}`).value.trim();
+      const description = event.target.getAttribute(`#editDataDesc${id}`).value.trim();
   
       const response = await fetch(`/api/posts/${id}`, {
-        method: 'UPDATE',
+        method: 'PUT',
+        body: JSON.stringify({ name, description }),
+        headers: {
+          'Content-Type': 'application/json',
+        },
       });
   
       if (response.ok) {
@@ -57,10 +62,19 @@ const newPost = async (event) => {
     }
   };
   
+  // button posts new post
   document
     .querySelector('.post-btn')
     .addEventListener('click', newPost);
-  
+
+// delete button deletes the post
   document
-    .querySelector('.post-list')
+    .querySelector('.btn')
     .addEventListener('click', deletePost);
+
+    // when post is edited, edit button will fire off updatePost
+    document
+    .querySelector('.postEditbtn')
+    .addEventListener('click', updatePost);
+
+  // todo: event handler to display edit form when edit button is clicked
