@@ -22,8 +22,9 @@ const newPost = async (event) => {
       }
     }
   };
-  // Todo: match attribute to profile handlebars so it works
-  const delButtonHandler = async (event) => {
+
+  // delete post
+  const deletePost = async (event) => {
     if (event.target.hasAttribute('data-id')) {
       const id = event.target.getAttribute('data-id');
   
@@ -38,6 +39,23 @@ const newPost = async (event) => {
       }
     }
   };
+
+  // update a post
+  const updatePost = async (event) => {
+    if (event.target.hasAttribute('data-id')) {
+      const id = event.target.getAttribute('data-id');
+  
+      const response = await fetch(`/api/posts/${id}`, {
+        method: 'UPDATE',
+      });
+  
+      if (response.ok) {
+        document.location.replace('/profile');
+      } else {
+        alert('Unable to update post');
+      }
+    }
+  };
   
   document
     .querySelector('.post-btn')
@@ -45,4 +63,4 @@ const newPost = async (event) => {
   
   document
     .querySelector('.post-list')
-    .addEventListener('click', delButtonHandler);
+    .addEventListener('click', deletePost);
