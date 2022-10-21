@@ -7,7 +7,7 @@
 
 {{#if logged_in}}
 
-{{!--  comment submit form --}}
+{{!-- comment submit form --}}
 
 <div class="addComment">
   <form class="newCommentForm">
@@ -20,20 +20,21 @@
     </div>
   </form>
 </div>
+{{/if}}
 
-{{#if comments.length}}
 <div class="AllComments">
   <h3>Comments</h3>
-</div>
 
-{{#each comments as |comment|}}
-<div class="Onecomment">
-  <p>{{user.name}}
-    {{comment.content}}
-    {{format_date comment.date_created}} </p>
+
+  {{#each comments as |comment|}}
+  <div class="Onecomment">
+    <p>{{user.name}}
+      {{comment.content}}
+      {{format_date comment.date_created}} </p>
+  </div>
 </div>
 {{/each}}
-{{/if}}
-{{/if}}
 
-<script src="./js/post.js"></script>
+
+
+<script src="/js/post.js"></script>

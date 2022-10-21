@@ -1,11 +1,14 @@
 [
     {
-      "content": "me too!"
+      "content": "me too!",
+      "post_id": 1
     },
     {
-      "content": "i love bootstrap!"
+      "content": "i love bootstrap!",
+      "post_id": 2
     },
     {
-      "content": "Express was so hard for me"
+      "content": "Express was so hard for me",
+      "post_id": 3
     }
   ]
