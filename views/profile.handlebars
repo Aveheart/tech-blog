@@ -6,7 +6,7 @@
 </div>
 
 <div class="break">
-    <div>
+    <div class="postNew">
         <h3>Post something new</h3>
         <form class="form new-project-form">
             <div class="form-group">
@@ -39,7 +39,7 @@
             </div>
         </div>
 {{!-- edit post form --}}
-         <form class="form editPost" editForm="{{post.id}}">
+         <form id="editPost" class="form editPost" editForm="{{post.id}}">
             <h3>Edit Post Here:</h3>
             <div class="form-group">
                 <label for="project-name">Title</label>

@@ -101,3 +101,6 @@ h2 {
     text-align: center;
     background-color: bisque;
 }
+#editPost {
+    display:none;
+}

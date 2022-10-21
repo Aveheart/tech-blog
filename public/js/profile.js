@@ -1,4 +1,18 @@
 console.log(document.location)
+
+const editForm = document.querySelector('.editPost');
+const postForm = document.querySelector('.postNew')
+
+// need function for edit post form
+
+const showEditForm = async (event) => {
+  const formEdit = event.target.getAttribute('editDataId');
+  const displayForm = document.querySelector(`form[editForm="${formEdit}"]`);
+  editForm.style.display= "block";
+  displayForm.style.display= "block";
+
+
+}
 const newPost = async (event) => {
     event.preventDefault();
   
@@ -30,7 +44,7 @@ const newPost = async (event) => {
       const response = await fetch(`/api/posts/${id}`, {
         method: 'DELETE',
       });
-  
+
       if (response.ok) {
         document.location.replace('/profile');
       } else {
@@ -42,6 +56,7 @@ const newPost = async (event) => {
   // update a post
   const updatePost = async (event) => {
     if (event.target.hasAttribute('editDataId')) {
+      
       const id = event.target.getAttribute('editDataId');
       const name = event.target.getAttribute(`#editPostName${id}`).value.trim();
       const description = event.target.getAttribute(`#editDataDesc${id}`).value.trim();
@@ -77,4 +92,6 @@ const newPost = async (event) => {
     .querySelector('.postEditbtn')
     .addEventListener('click', updatePost);
 
-  // todo: event handler to display edit form when edit button is clicked
+    document
+    .querySelector('.editBtn')
+    .addEventListener('click', showEditForm);
