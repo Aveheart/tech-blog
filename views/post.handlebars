@@ -28,7 +28,8 @@
 
   {{#each comments as |comment|}}
   <div class="Onecomment">
-    <p>{{user.name}}
+    <p>
+      {{user.name}}
       {{comment.content}}
       {{format_date comment.date_created}} </p>
   </div>
