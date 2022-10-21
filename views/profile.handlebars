@@ -43,15 +43,15 @@
             <h3>Edit Post Here:</h3>
             <div class="form-group">
                 {{!-- <label for="project-name">Title</label> --}}
-                <input class="form-input" type="text" id="editPostName" name="project-name" value="{{post.name}}"/>
+                <input class="form-input" type="text" id="editPostName{{post.id}}" name="project-name" value="{{post.name}}"/>
             </div>
             <div class="form-group">
                 <label for="project-desc"></label>
-                <textarea class="form-input" id="editpostText" name="project-desc" value="{{post.description}}" 
+                <textarea class="form-input" id="editpostText{{post.id}}" name="project-desc" value="{{post.description}}" 
                     style="width: 600px; height: 400px;"></textarea>
             </div>
             <div class="form-group">
-                <button type="submit" EditBtnId="{{post.id}}" class="postEditbtn btn-primary">Edit</button>
+                <button type="submit" editBtnId="{{post.id}}" class="postEditbtn btn-primary">Edit</button>
             </div>
         </form>
         {{/each}}

@@ -61,13 +61,13 @@ const newPost = async (event) => {
 
   // update a post
   const updatePost = async (event) => {
-    if (event.target.hasAttribute('editDataId')) {
+    if (event.target.hasAttribute('editBtnId')) {
       event.preventDefault();
       console.log('clicked edit')
       
-      const id = event.target.getAttribute('editDataId');
-      const name = event.target.querySelector(`#editPostName${id}`).value.trim();
-      const description = event.target.querySelector(`#editpostText${id}`).value.trim();
+      const id = event.target.getAttribute('editBtnId');
+      const name = event.target.querySelector(`#editPostName${id}`);
+      const description = event.target.querySelector(`#editpostText${id}`);
   
       const response = await fetch(`/api/posts/${id}`, {
         method: 'PUT',
