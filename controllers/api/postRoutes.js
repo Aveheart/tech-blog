@@ -20,7 +20,6 @@ router.put('/:id', withAuth, async (req, res) => {
     const editPost = await Post.update(...req.body, {
       where: {
         id: req.params.id,
-        user_id: req.session.user_id,
       },
     },{
       new: true
@@ -33,6 +32,7 @@ router.put('/:id', withAuth, async (req, res) => {
 
     res.status(200).json(editPost);
   } catch (err) {
+    
     res.status(500).json(err);
   }
 });
