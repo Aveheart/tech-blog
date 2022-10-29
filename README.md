@@ -9,6 +9,8 @@ Click the deployed link and then sign up!
 ## Usage
 sign up to make a profile. Once in, add a post and update. Read and add comments to other blog posts from other users. The option to delete posts is there as well.
 
-## License
+## Credit
+Shout out to Arely Rivera-Gonzales for the help after class to help me finish this project!
 
 ## Questions
+My Github: [Github](https://github.com/Aveheart)
