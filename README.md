@@ -16,4 +16,4 @@ https://github.com/Aveheart/tech-blog.git
 Shout out to Arely Rivera-Gonzales for the help after class to help me finish this project!
 
 ## Questions
-My Github: [Github](https://github.com/Aveheart)
+My Github: [Aveheart](https://github.com/Aveheart)
